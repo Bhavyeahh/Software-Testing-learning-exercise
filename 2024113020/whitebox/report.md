@@ -139,3 +139,29 @@
   - Re-ran pylint on the same file.
   - Final file score: `10.00/10`.
   - No remaining pylint messages for this file.
+
+## Iteration 10
+- Target file:
+  - `whitebox/code/moneypoly/moneypoly/moneypoly/game.py`
+- Initial warnings in this file:
+  - `C0325: superfluous-parens` (multiple locations)
+  - `C0304: missing-final-newline`
+  - `R0902: too-many-instance-attributes`
+  - `R0912: too-many-branches`
+  - `W1309: f-string-without-interpolation`
+  - `R1723: no-else-break`
+  - `W0611: unused-import` (`os`, `GO_TO_JAIL_POSITION`)
+  - Follow-up after first pass: `R0902` and `R0911: too-many-return-statements`
+- Fixes applied in this file:
+  - Removed unused imports (`os`, `GO_TO_JAIL_POSITION`).
+  - Removed unused `running` attribute and simplified game loop condition.
+  - Replaced separate deck attributes with a single `card_decks` mapping.
+  - Refactored card handling into helper methods and action-to-handler dispatch.
+  - Removed unnecessary parentheses after `not` in range checks.
+  - Replaced constant-only f-string in banner call with a plain string.
+  - Simplified menu branch structure to remove unnecessary `elif` after `break`.
+  - Added final newline at end of file.
+- Verification result:
+  - Re-ran pylint on the same file.
+  - Final file score: `10.00/10`.
+  - No remaining pylint messages for this file.
