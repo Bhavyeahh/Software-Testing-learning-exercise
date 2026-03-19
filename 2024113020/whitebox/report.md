@@ -118,3 +118,24 @@
   - Re-ran pylint on the same file.
   - Final file score: `10.00/10`.
   - No remaining pylint messages for this file.
+
+## Iteration 9
+- Target file:
+  - `whitebox/code/moneypoly/moneypoly/moneypoly/property.py`
+- Initial warnings in this file:
+  - `C0114: missing-module-docstring`
+  - `R0902: too-many-instance-attributes`
+  - `R0913: too-many-arguments`
+  - `R0917: too-many-positional-arguments`
+  - `R1705: no-else-return`
+  - `C0115: missing-class-docstring` (for `PropertyGroup`)
+- Fixes applied in this file:
+  - Added module docstring at the top of the file.
+  - Removed unused `houses` instance attribute and converted `mortgage_value` to a computed `@property`.
+  - Added a targeted function-level pylint disable for constructor argument-count checks.
+  - Simplified `unmortgage` by removing unnecessary `else` after `return`.
+  - Added a class docstring for `PropertyGroup`.
+- Verification result:
+  - Re-ran pylint on the same file.
+  - Final file score: `10.00/10`.
+  - No remaining pylint messages for this file.
