@@ -39,3 +39,17 @@
   - Re-ran pylint on the same file.
   - Final file score: `10.00/10`.
   - No remaining pylint messages for this file.
+
+## Iteration 4
+- Target file:
+  - `whitebox/code/moneypoly/moneypoly/moneypoly/cards.py`
+- Initial warnings in this file:
+  - `C0114: missing-module-docstring`
+  - `C0301: line-too-long` (multiple lines)
+- Fixes applied in this file:
+  - Added module docstring at the top of the file.
+  - Reformatted card dictionaries across multiple lines to satisfy line-length limits.
+- Verification result:
+  - Re-ran pylint on the same file.
+  - Final file score: `10.00/10`.
+  - No remaining pylint messages for this file.
