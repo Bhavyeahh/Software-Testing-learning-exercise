@@ -86,3 +86,17 @@
   - Re-ran pylint on the same file.
   - Final file score: `10.00/10`.
   - No remaining pylint messages for this file.
+
+## Iteration 7
+- Target file:
+  - `whitebox/code/moneypoly/moneypoly/main.py`
+- Initial warnings in this file:
+  - `C0114: missing-module-docstring`
+  - `C0116: missing-function-docstring` (for `get_player_names` and `main`)
+- Fixes applied in this file:
+  - Added module docstring at the top of the file.
+  - Added function docstrings for `get_player_names` and `main`.
+- Verification result:
+  - Re-ran pylint on the same file.
+  - Final file score: `10.00/10`.
+  - No remaining pylint messages for this file.
