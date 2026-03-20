@@ -52,6 +52,9 @@ class Game:
 
         if player.in_jail:
             self._handle_jail_turn(player)
+            if player.is_eliminated:
+                self.turn_number += 1
+                return
             self.advance_turn()
             return
 
