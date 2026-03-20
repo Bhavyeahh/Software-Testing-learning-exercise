@@ -322,7 +322,11 @@ class Game:
 
     def _apply_card_collect(self, player, value):
         """Pay `value` from bank to player."""
-        amount = self.bank.pay_out(value)
+        try:
+            amount = self.bank.pay_out(value)
+        except ValueError:
+            print(f"  Bank cannot fund collect card payout of ${value}.")
+            return
         player.add_money(amount)
 
     def _apply_card_pay(self, player, value):
