@@ -343,7 +343,7 @@ class Game:
     def _apply_card_transfer_from_all(self, player, value):
         """Collect `value` from each other player who can afford it."""
         for other in self.players:
-            if other != player and other.balance >= value:
+            if other != player:
                 other.deduct_money(value)
                 player.add_money(value)
 
