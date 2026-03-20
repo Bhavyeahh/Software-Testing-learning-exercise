@@ -67,6 +67,10 @@ class Game:
 
         self._move_and_resolve(player, roll)
 
+        if player.is_eliminated:
+            self.turn_number += 1
+            return
+
         # Rolling doubles earns an extra turn
         if self.dice.is_doubles():
             print(f"  Doubles! {player.name} rolls again.")
