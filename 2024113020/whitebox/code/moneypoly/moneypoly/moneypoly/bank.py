@@ -47,6 +47,12 @@ class Bank:
         """
         if amount <= 0:
             return
+        if amount > self._funds:
+            print(
+                f"  Loan denied: bank cannot issue ${amount}; "
+                f"only ${self._funds} available."
+            )
+            return
         self._funds -= amount
         player.add_money(amount)
         self._loans_issued.append((player.name, amount))
