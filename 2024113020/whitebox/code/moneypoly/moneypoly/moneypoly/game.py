@@ -315,7 +315,10 @@ class Game:
             player.add_money(GO_SALARY)
             print(f"  {player.name} passed Go and collected ${GO_SALARY}.")
         tile = self.board.get_tile_type(value)
-        if tile == "property":
+        if tile == "go_to_jail":
+            player.go_to_jail()
+            print(f"  {player.name} has been sent to Jail!")
+        elif tile == "property":
             prop = self.board.get_property_at(value)
             if prop:
                 self._handle_property_tile(player, prop)
