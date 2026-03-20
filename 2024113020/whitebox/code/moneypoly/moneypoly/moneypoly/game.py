@@ -172,7 +172,11 @@ class Game:
             return False
 
         payout = prop.mortgage_value
-        amount = self.bank.pay_out(payout)
+        try:
+            amount = self.bank.pay_out(payout)
+        except ValueError:
+            print(f"  Mortgage failed: bank cannot fund ${payout} payout.")
+            return False
         prop.is_mortgaged = True
         player.add_money(amount)
         print(f"  {player.name} mortgaged {prop.name} and received ${payout}.")
