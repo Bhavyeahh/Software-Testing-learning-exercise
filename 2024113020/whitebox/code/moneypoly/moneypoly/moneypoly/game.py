@@ -140,6 +140,9 @@ class Game:
         if prop.owner is not None:
             print(f"  {prop.name} is already owned.")
             return False
+        if prop.is_mortgaged:
+            print(f"  {prop.name} is mortgaged and cannot be purchased.")
+            return False
         if player.balance < prop.price:
             print(f"  {player.name} cannot afford {prop.name} (${prop.price}).")
             return False
