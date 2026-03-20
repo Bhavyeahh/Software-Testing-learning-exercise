@@ -311,7 +311,7 @@ class Game:
         """Move player to an absolute board position and resolve landing effects."""
         old_pos = player.position
         player.position = value
-        if value < old_pos:
+        if value < old_pos or value == 0:
             player.add_money(GO_SALARY)
             print(f"  {player.name} passed Go and collected ${GO_SALARY}.")
         tile = self.board.get_tile_type(value)
