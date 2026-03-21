@@ -42,6 +42,10 @@ class InventoryModule:
         """Get a car by ID."""
         return self._cars.get(car_id)
 
+    def list_cars(self) -> list[Car]:
+        """Return all tracked cars."""
+        return list(self._cars.values())
+
     def mark_car_damaged(self, car_id: str) -> None:
         """Mark car as damaged and unavailable."""
         car = self.get_car(car_id)
