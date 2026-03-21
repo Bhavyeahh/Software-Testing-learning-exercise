@@ -1,6 +1,7 @@
 """System orchestration for StreetRace Manager."""
 
 from streetrace_manager.registration import RegistrationModule
+from streetrace_manager.crew_management import CrewManagementModule
 
 
 class StreetRaceSystem:
@@ -8,3 +9,4 @@ class StreetRaceSystem:
 
     def __init__(self):
         self.registration = RegistrationModule()
+        self.crew_management = CrewManagementModule(self.registration)
