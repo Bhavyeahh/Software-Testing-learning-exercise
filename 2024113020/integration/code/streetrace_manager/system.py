@@ -3,6 +3,7 @@
 from streetrace_manager.registration import RegistrationModule
 from streetrace_manager.crew_management import CrewManagementModule
 from streetrace_manager.inventory import InventoryModule
+from streetrace_manager.race_management import RaceManagementModule
 
 
 class StreetRaceSystem:
@@ -12,3 +13,4 @@ class StreetRaceSystem:
         self.registration = RegistrationModule()
         self.crew_management = CrewManagementModule(self.registration)
         self.inventory = InventoryModule()
+        self.race_management = RaceManagementModule(self.registration, self.inventory)
