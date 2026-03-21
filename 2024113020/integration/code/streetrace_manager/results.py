@@ -10,6 +10,7 @@ class ResultsModule:
     def __init__(self, races: RaceManagementModule, inventory: InventoryModule):
         self.races = races
         self.inventory = inventory
+        self.reputation = None
         self._results: dict[str, list[dict[str, int | str]]] = {}
         self._ranking_points: dict[str, int] = {}
 
@@ -35,6 +36,8 @@ class ResultsModule:
             earned = points[idx] if idx < len(points) else 0
             self._ranking_points[driver] = self._ranking_points.get(driver, 0) + earned
             self._results[race_id].append({"driver": driver, "position": idx + 1, "points": earned})
+            if self.reputation is not None:
+                self.reputation.apply_race_points(driver, earned)
 
         if prize_money < 0:
             raise ValueError("Prize money cannot be negative.")
