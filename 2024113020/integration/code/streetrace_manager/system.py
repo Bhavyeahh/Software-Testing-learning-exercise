@@ -6,6 +6,7 @@ from streetrace_manager.inventory import InventoryModule
 from streetrace_manager.race_management import RaceManagementModule
 from streetrace_manager.results import ResultsModule
 from streetrace_manager.mission_planning import MissionPlanningModule
+from streetrace_manager.maintenance import MaintenanceModule
 
 
 class StreetRaceSystem:
@@ -18,3 +19,4 @@ class StreetRaceSystem:
         self.race_management = RaceManagementModule(self.registration, self.inventory)
         self.results = ResultsModule(self.race_management, self.inventory)
         self.mission_planning = MissionPlanningModule(self.registration, self.inventory)
+        self.maintenance = MaintenanceModule(self.registration, self.inventory)

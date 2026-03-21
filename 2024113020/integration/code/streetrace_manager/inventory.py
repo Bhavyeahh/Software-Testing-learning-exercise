@@ -68,8 +68,24 @@ class InventoryModule:
             raise ValueError("Quantity must be positive.")
         self._parts[part_name] = self._parts.get(part_name, 0) + quantity
 
+    def part_quantity(self, part_name: str) -> int:
+        """Return quantity of a spare part."""
+        return self._parts.get(part_name, 0)
+
+    def use_part(self, part_name: str, quantity: int) -> None:
+        """Consume spare parts when available."""
+        if quantity <= 0:
+            raise ValueError("Quantity must be positive.")
+        if self.part_quantity(part_name) < quantity:
+            raise ValueError("Insufficient spare parts.")
+        self._parts[part_name] -= quantity
+
     def add_tool(self, tool_name: str, quantity: int) -> None:
         """Increase tool count for tool_name."""
         if quantity <= 0:
             raise ValueError("Quantity must be positive.")
         self._tools[tool_name] = self._tools.get(tool_name, 0) + quantity
+
+    def tool_quantity(self, tool_name: str) -> int:
+        """Return quantity of a tool."""
+        return self._tools.get(tool_name, 0)
