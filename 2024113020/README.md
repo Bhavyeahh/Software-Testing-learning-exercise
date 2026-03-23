@@ -1,34 +1,38 @@
-# StreetRace Manager Submission
+# StreetRace Manager / Assignments
 
-## Folder Structure
+## How to run the code
 
-- `whitebox/`: Contains white-box testing code, diagrams, test suite, and the specific report.
-- `integration/`: Contains integration testing code, integration call graph diagram, test suite, and report.
-- `blackbox/`: Contains black-box testing suite and the report.
-
-## How To Run Code
-
-Run StreetRace Manager CLI from this root directory (`2024113020`):
-
+Run StreetRace Manager CLI (Integration) from the root directory:
 ```bash
 PYTHONPATH=integration/code python3 -m streetrace_manager --help
 ```
 
-## How To Run Tests
+## How to run the tests
 
-Make sure you are in the root directory and you have `pytest` installed. Run the test suites using the following commands:
+Run the following commands from the root directory of the repository:
 
-### 1. Integration Tests
+**1. White-box Tests (Monopoly)**
 ```bash
-PYTHONPATH=integration/code python3 -m pytest integration/tests/test_streetrace_integration.py -v
+PYTHONPATH=whitebox/code/moneypoly/moneypoly python3 -m pytest whitebox/tests/ -v
 ```
 
-### 2. White-box Tests
+**2. Integration Tests (StreetRace Manager)**
 ```bash
-PYTHONPATH=whitebox/code python3 -m pytest whitebox/tests/test_monopoly_testing.py -v
+PYTHONPATH=integration/code python3 -m pytest integration/tests/ -v
 ```
 
-### 3. Black-box Tests
+**3. Black-box Tests (QuickCart)**
+
+First, load and start the QuickCart API Docker server (assuming the `.tar` is in the parent directory):
+```bash
+docker load -i ../quickcart_image.tar
+docker run -d -p 8080:8080 quickcart
+```
+
+Then, run the tests:
 ```bash
 python3 -m pytest blackbox/tests -v
 ```
+
+## Git Repository Link
+- Add your URL here: `https://github.com/Bhavyeahh/Software-Testing-learning-exercise.git`
